@@ -14,7 +14,7 @@ def passautomat()->str: #делаю функцию где пароль буде�
 	psword = ''.join([random.choice(ls) for x in range(12)])
 	print(psword)
 
-def passkontroll(passwords:str)->str:
+def passkontroll(passwords:str)-> bool:
 	ls=list(psword)
 	for n in ls:
 		if n.isdigit(): d=True #идёт проверка, является ли переменная числом

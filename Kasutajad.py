@@ -20,16 +20,14 @@ while True:
 			ps=passautomat()
 		elif a.upper()=="s":
 			while 1:
-				ps=input("Введите свой пароль")
+				pas=input("Введите свой пароль")
 				result=passkontroll(passwords)
 				if result==True:
 					users.append(login)
-					passwords.append(ps)
+					passwords.append(pas)
 					break
 		else:
 			print("Неверный пароль")
 	elif a==2:
 		print("Для авторизации введите свой логин и пароль.")
 		login=input("Введите имя/логин пользователя: ")
-		if passwords.index(,[passwords],[users]):
-			print("Добро пожаловать")
