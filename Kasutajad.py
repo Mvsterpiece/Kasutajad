@@ -1,33 +1,32 @@
 from module1 import *
-users=["Denis"]
-passwords=["pass"]
 
 while True:
-	print("Регистрация - 1")
-	print("Авторизация - 2")
-	a=int(input())
-	if a==1:
-		print("Для регистрации, введите свой логин и пароль.")
-		while 1:
-			login=input("Введите имя/логин пользователя: ")
-			if login not in users:
-				print("Данное имя/логин не занято. Теперь оно ваше!")
-				break
-			else:
-				print("Данное имя/логин уже кем то используется.")
-		a=input("Вы желаете сами придумать пароль или пусть рандомно создаться? (Рандом -r, Самому -s)")
-		if a.upper()=="r":
-			ps=passautomat()
-		elif a.upper()=="s":
-			while 1:
-				pas=input("Введите свой пароль")
-				result=passkontroll(passwords)
-				if result==True:
-					users.append(login)
-					passwords.append(pas)
-					break
-		else:
-			print("Неверный пароль")
-	elif a==2:
-		print("Для авторизации введите свой логин и пароль.")
-		login=input("Введите имя/логин пользователя: ")
+    print("Зарегистрироваться-1, Авторизоваться-2, Выход-3")
+    ch=int(input())
+    if ch==1:
+        print("Вы выбрали регистрацию")
+        while 1:
+            log=input("Введите свое имя: ")
+            if log not in users:
+                print("Данное имя не было занято, теперь оно принадлежит вам.")
+                break
+            else:
+                print("Данное имя уже кем то используется.")
+        ch=input("Самим записать пароль(S) или робот придумает(R)? ")
+        if ch.upper()=="R":
+            pas=randompass()
+        elif ch.upper()=="S":
+            while 1:
+                pas=input("Введите свой пароль: ")
+                result=control(pas)
+                if result==True:
+                    users.append(log)
+                    passwords.append(pas)
+                    break
+    elif ch==2:
+        print("Вы выбрали авторизацию")
+        if users.index(user)==passwords.index(pas):
+            print("Добро пожаловать")
+    elif ch==3:
+        print("Выход из программы")
+        break
