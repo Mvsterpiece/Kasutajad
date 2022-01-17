@@ -35,3 +35,33 @@ def control(passwords:str)->str:
     else:
         control=False
     return control
+
+def failist_lugemine(f:str,u:list):
+    """Info failist f listisse u
+
+    """
+    fail=open(f,"r",)
+    for rida in fail:
+        u.append(rida.strip())
+    fail.close()
+    return u 
+
+def failist_passw(a:str,p:list):
+    """Info failist a listisse p
+
+    """
+    fail=open(a,"r")
+    for rida in fail:
+        p.append(rida.strip())
+    fail.close()
+    return p
+
+#def failisse_salvestamine(f:str,u:list):
+#    fail=open(f,"w")
+#    for el in u:
+#        fail.write(el+"\n")
+#    fail.close()
+def rida_salvestamine(f:str,rida:str):
+    fail=open(f,"a")
+    fail.write(rida+"\n")
+    fail.close()

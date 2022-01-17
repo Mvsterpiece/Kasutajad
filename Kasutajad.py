@@ -1,8 +1,11 @@
 from module1 import *
 
-users=["Denis","Pablo"]
-passwords=["12345","boba"]
-
+users=[]
+passwords=[]
+failist_lugemine("users.txt",users)
+print(users)
+failist_passw("passw.txt",passwords)
+print(passwords)
 while True:
     print("Зарегистрироваться-1, Авторизоваться-2, Выход-3")
     ch=int(input())
@@ -11,6 +14,7 @@ while True:
         while 1:
             log=input("Введите свое имя: ")
             if log not in users:
+                users=rida_salvestamine("users.txt",log)
                 print("Данное имя не было занято, теперь оно принадлежит вам.")
                 break
             else:
@@ -83,4 +87,3 @@ while True:
     elif ch==3:
         print("Выход из программы")
         break
-        
